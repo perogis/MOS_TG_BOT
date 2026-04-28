@@ -2,6 +2,7 @@ import telebot
 import psycopg
 import os
 
+print("BOT STARTING...")
 # --- НАСТРОЙКИ ---
 BOT_TOKEN = '8275387371:AAFiXbiW1d4ZWgg1g3AMcgx_gj6IgdwZU1k'
 
@@ -224,4 +225,9 @@ def mark_viewed(call):
 
 
 # --- ЗАПУСК ---
-bot.polling(none_stop=True)
+try:
+    print("START POLLING")
+    bot.polling(none_stop=True)
+except Exception as e:
+    print("FATAL ERROR:", e)
+print("BOT CREATED")
