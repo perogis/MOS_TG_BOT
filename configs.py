@@ -1,5 +1,5 @@
 import telebot
-import psycopg2
+import psycopg
 import os
 
 # --- НАСТРОЙКИ ---
