@@ -8,7 +8,7 @@ BOT_TOKEN = '8275387371:AAFiXbiW1d4ZWgg1g3AMcgx_gj6IgdwZU1k'
 DB_URL = "postgresql://mos_team_postgres_user:3qW96sv2XZpjv9cRO7eo9n1P2FlhOz8u@dpg-d7m8m8tckfvc73ebbh0g-a.oregon-postgres.render.com/mos_team_postgres"
 
 bot = telebot.TeleBot(BOT_TOKEN)
-b=0
+H=0
 
 # --- ПОДКЛЮЧЕНИЕ К БД ---
 def get_connection():
