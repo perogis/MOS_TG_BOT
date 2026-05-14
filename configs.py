@@ -12,7 +12,10 @@ bot = telebot.TeleBot(BOT_TOKEN)
 
 # --- ПОДКЛЮЧЕНИЕ К БД ---
 def get_connection():
-    return psycopg.connect(DB_URL)
+    return psycopg.connect(
+        DB_URL,
+        sslmode="require"
+    )
 
 
 # --- КНОПКИ ---
