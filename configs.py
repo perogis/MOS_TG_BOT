@@ -223,11 +223,32 @@ def mark_viewed(call):
         reply_markup=None
     )
 
+# --- ДЛЯ RENDER PORT ---
+from flask import Flask
+from threading import Thread
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run_web():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
 
 # --- ЗАПУСК ---
 try:
+    print("START WEB SERVER")
+
+    t = Thread(target=run_web)
+    t.start()
+
     print("START POLLING")
     bot.polling(none_stop=True)
+
 except Exception as e:
     print("FATAL ERROR:", e)
+
 print("BOT CREATED")
